@@ -113,7 +113,7 @@ connections.on('connection', async socket => {
     return items
   }
 
-  socket.on('disconnect', () => {
+  socket.on('disconnect', async () => {
     // do some cleanup
     console.log('peer disconnected')
     consumers = removeItems(consumers, socket.id, 'consumer')
@@ -429,7 +429,7 @@ const createWebRtcTransport = async (router) => {
         listenIps: [
           {
             ip: '0.0.0.0', // replace with relevant IP address
-            announcedIp: '10.0.0.115',
+            announcedIp: '192.168.187.189',
           }
         ],
         enableUdp: true,
